@@ -19,12 +19,12 @@ const Sidebar = () => {
                 </div>
                 <div className="   menu ">
                     <div className=" container-fluid items">Manage</div>
-                    <Link className="  sidebara" exact to="opportunities"> <i class="fa-solid fa-comment"></i> Opportunities </Link>
-                    <Link className="  sidebara" exact to="team"><i class="fa-solid fa-user-plus"></i> Team</Link>
+                    <Link className="  sidebara" exact to="opportunities"> <i className="fa-solid fa-comment"></i> Opportunities </Link>
+                    <Link className="  sidebara" exact to="team"><i className="fa-solid fa-user-plus"></i> Team</Link>
 
                     <div className=" container-fluid items"> Account</div>
-                    <Link className="  sidebara" exact to="billing"> <i class="fa-solid fa-money-bill"></i> Billing </Link>
-                    <button className="logout" onClick={logout}><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
+                    <Link className="  sidebara" exact to="billing"> <i className="fa-solid fa-money-bill"></i> Billing </Link>
+                    <button className="logout" onClick={logout}><i className="fa-solid fa-right-from-bracket"></i> Logout</button>
                 </div>
 
             </div>

@@ -7,7 +7,7 @@ import ChangeTeam from "../Modals/changeTeamBilling";
 const Billing = () => {
     return (
         <>
-            <div className=" px-3">
+            <div className=" px-3 background-container">
                 <div className="d-flex justify-content-between mt-4 mb-4">
                     <h5 className=" ">
                         Billing
@@ -35,13 +35,13 @@ const Billing = () => {
                                 <th scope="row">Next Payment</th>
                                 <td colspan="2">$7-August 24,2023</td>
                                 <td>  <button className=" btn p-0 " data-bs-toggle="modal" data-bs-target="#exampleModalcancel" data-bs-whatever="@mdo"> <Link className=" text-decoration-none"> Cancel Subcription</Link> </button>
-                                    <CancelSubcription /></td>
+                                    </td>
                             </tr>
                             <tr>
                                 <th scope="row">Payment Method</th>
                                 <td colspan="2">Visa Card**** **** **** 4242</td>
                                 <td> <button className=" btn p-0 " data-bs-toggle="modal" data-bs-target="#exampleModalchange" data-bs-whatever="@mdo"> <Link className=" text-decoration-none"> Change</Link> </button></td>
-                                <ChangeTeam />
+                                
                             </tr>
                         </tbody>
                     </table>
@@ -72,6 +72,8 @@ const Billing = () => {
                 </div>
 
             </div>
+            <ChangeTeam />
+            <CancelSubcription />
         </>
     )
 }

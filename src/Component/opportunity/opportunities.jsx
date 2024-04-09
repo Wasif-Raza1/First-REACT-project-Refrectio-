@@ -1,9 +1,10 @@
 
 import React, { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import Modal from "../modal";
 
 const Opportunity = () => {
+
     const [opportunity, setopportunity] = useState([]);
 
     useEffect(() => {
@@ -20,10 +21,11 @@ const Opportunity = () => {
     };
 
     const navigate = useNavigate()
-    const draft = () => {
-        navigate('/dashboard/draft')
-    }
+    const draft = (card) => {
 
+        navigate(`/dashboard/draft/${card.id}`)
+    }
+   
     return (
         <>
             <div>
@@ -32,8 +34,8 @@ const Opportunity = () => {
                         <h5 className=" ">
                             Oppertunities
                         </h5>
-                        <button className=" btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo"> Create New </button>
-
+                        <button className=" btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo"> Create New </button>     
+                  
                     </div>
 
                 </div>
@@ -52,7 +54,7 @@ const Opportunity = () => {
                                             {card.name}
                                         </Link>
                                         <br />
-                                        <button className="btn btn-dark mt-2 mb-2" onClick={draft}>
+                                        <button className="btn btn-dark mt-2 mb-2" onClick={() => draft(card)}>
                                             Draft
                                         </button>
                                         <p className="card-text mb-5 pb-5">{card.description}</p>

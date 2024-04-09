@@ -34,7 +34,7 @@ function App() {
       <Route path='dashboard' element={<DashBoard />} >
         <Route path='' element={<Navigate to="opportunities" />} />
         <Route path='opportunities' element={<Opportunity />} />
-        <Route path='draft' element={<Draft/>}>
+        <Route path='draft/:id' element={<Draft/>}>
         <Route path='' element={<Questions/>}/>
           <Route path='questions' element={<Questions/>}/>
           <Route path='info' element={<Information/>}/>

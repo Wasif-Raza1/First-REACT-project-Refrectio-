@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router';
 
 const ChangeTeam = () => {
     const Navigate = useNavigate();
-    const complete=()=>{
+    const complete = () => {
         Navigate('/subscription1');
     }
     const validationSchema = Yup.object().shape({
@@ -38,20 +38,17 @@ const ChangeTeam = () => {
         complete();
     };
 
-
-
     return (
         <>
-
-            <div class="modal fade" id="exampleModalchange" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered modal-lg">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Change Card</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div className="modal fade " id="exampleModalchange" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div className="modal-dialog modal-dialog-centered modal-lg">
+                    <div className="modal-content">
+                        <div className="modal-header">
+                            <h5 className="modal-title" id="exampleModalLabel">Change Card</h5>
+                            <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <div class="modal-body"> <div className="register-form">
-                            <form onSubmit={handleSubmit(onSubmit)}>
+                        <div className="modal-body"> <div className="register-form">
+                            <form>
                                 <div className="form-group">
                                     <label>Team Name</label>
                                     <input
@@ -116,14 +113,14 @@ const ChangeTeam = () => {
 
 
                                 <div className="form-group">
-                                    <button className="form-button" type="submit" >PAY</button>
+                                    <button className="form-button" >PAY</button>
                                 </div>
                             </form>
                         </div>
                         </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                            <button type="button" data-bs-dismiss="modal" class="btn btn-primary">Save</button>
+                        <div className="modal-footer">
+                            <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                            <button type="button" data-bs-dismiss="modal" className="btn btn-primary">Save</button>
                         </div>
                     </div>
                 </div>

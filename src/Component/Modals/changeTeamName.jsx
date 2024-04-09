@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 
 
-const Modal = ({ onAddCard }) => {
+const ChangeTeamName = ({ ChangeName }) => {
     const [opportunitymodal, setopportunitymodal] = useState({
-        heading: "",
+        Name: "",
         description: "",
     });
     
@@ -24,22 +24,20 @@ const Modal = ({ onAddCard }) => {
         console.log('submit');
         const newCard = {
             id: Date.now(),
-            name: opportunitymodal.heading,
-            description: opportunitymodal.description,
+            name: opportunitymodal.Name,
             status: "Draft",
         };
         console.log(newCard);
-        onAddCard(newCard);
+        ChangeName(newCard);
         setopportunitymodal({
-            heading: "",
-            description: "",
+            Name: "",
         });
     };
 
     return (
         <>
 
-            <div className="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div className="modal fade" id="exampleModalName" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div className="modal-dialog">
                     <div className="modal-content">
                         <div className="modal-header">
@@ -49,29 +47,18 @@ const Modal = ({ onAddCard }) => {
                         <div className="modal-body">
                             <form>
                                 <div className="mb-3">
-                                    <label htmlFor="recipient-name" className="col-form-label">Opportunity Name</label>
+                                    <label htmlFor="recipient-name" className="col-form-label">Change Team Name</label>
                                     <input type="text" className="form-control" placeholder='Enter oppoetunity Name'
                                         id="recipient-name"
                                         onChange={inputFeild}
-                                        name="heading"
-                                        value={opportunitymodal.heading}
+                                        name="Name"
+                                        value={opportunitymodal.Name}
                                     />
-                                </div>
-                                <div className="mb-3">
-                                    <label htmlFor="message-text" className="col-form-label"> Description</label>
-                                    <input type="text" className="form-control" id="message-text" 
-                                        placeholder='Enter description'
-                                        onChange={inputFeild}
-                                        name="description"
-                                        value={opportunitymodal.description}
-                                    >
-                                    </input>
                                 </div>
                             </form>
                         </div>
                         <div className="modal-footer">
-                            <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="button" onClick={submit} data-bs-dismiss="modal" className="btn btn-primary">Save</button>
+                           <button type="button" onClick={submit} data-bs-dismiss="modal" className="btn btn-primary">Change</button>
                         </div>
                     </div>
                 </div>
@@ -79,5 +66,5 @@ const Modal = ({ onAddCard }) => {
         </>
     )
 }
-export default Modal;
+export default ChangeTeamName;
 
