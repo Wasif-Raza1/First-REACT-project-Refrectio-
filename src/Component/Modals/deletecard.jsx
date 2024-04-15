@@ -1,11 +1,22 @@
 import React from "react";
-import { useNavigate } from "react-router";
+import { useNavigate, useParams } from "react-router";
 
 const DeleteModal = () => {
-    const navigate =useNavigate()
+    const { id } = useParams();
+    const navigate = useNavigate()
+
+    const cardData = JSON.parse(localStorage.getItem('opportunity_data'));
+
+    // console.log(cardData);
+
+    // console.log(matchedName);
+
+
     const remove = () => {
-        localStorage.removeItem('opportunity_data');
+        const updatedData = cardData.filter(item => item.id !== parseInt(id));
+        localStorage.setItem('opportunity_data', JSON.stringify(updatedData));
         navigate('/dashboard/opportunities');
+
     }
     const submit = () => {
     };
@@ -18,11 +29,11 @@ const DeleteModal = () => {
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Create Opportunity</h5>
+                            <h5 class="modal-title" id="exampleModalLabel">Delete Opportunity</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                        <p>Once the opportunity is deleted, it cannot be undone. Are you sure ?</p>
+                            <p>Once the opportunity is deleted, it cannot be undone. Are you sure ?</p>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>

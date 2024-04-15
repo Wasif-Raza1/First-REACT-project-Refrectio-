@@ -33,7 +33,7 @@ const App = () => {
     });
 
     const onSubmit = data => {
-        console.log(JSON.stringify(data, null, 2));
+        localStorage.setItem('paymentData' , JSON.stringify(data));
         complete();
     };
 
